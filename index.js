@@ -19,5 +19,6 @@ mongoose.connect("mongodb://localhost/productsDB", {
  * */ 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.get("/", (req, res) => res.send(`Store server running on port ${PORT}`));
 app.listen(PORT, () => console.log(`Your server is running on port ${PORT}`));
