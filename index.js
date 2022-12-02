@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 const app = express();
 const PORT = 4000;
 
-// mongoose conneton
+// mongoose conneton (mongodb://localhost/productsDB)
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/productsDB", {
   useNewUrlParser: true,
