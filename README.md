@@ -33,3 +33,30 @@ Your server is running on port 4000
 ```
 
 ### Fix connection to database
+
+1. Add to index.js **import mongoose from "mongoose;"**
+2. Add:
+
+```javascript
+...
+import  mongoose from "mongoose;
+...
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+
+const app = express();
+const PORT = 4000;
+
+// mongoose conneton
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost/productsDB", {
+  useNewUrlParser: true,
+  useUnifedTopology: true,
+});
+
+// bodyparser setup
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+...
+```
